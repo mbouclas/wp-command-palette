@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Svelte + TS</title>
+  </head>
+  <body>
+  <command-palette baseUrl="http://localhost:8086"></command-palette>
+  <header>
+
+    <cp-toggle-modal-button></cp-toggle-modal-button>
+  </header>
+  <section>
+  This is the main
+  </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+
+<script type="module" async>
+  window.addEventListener('load', function() {
+    const event = new CustomEvent('cp-register-command', {
+      detail: {
+        command: {
+          label: 'Custom Command',
+          description: 'This is a custom command',
+        }
+      }
+    });
+
+    // Dispatch the event on the window object
+    window.dispatchEvent(event);
+  });
+</script>
+</html>

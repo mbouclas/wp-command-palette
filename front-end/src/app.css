@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card {
+    @apply bg-red-500;
+}
+.test {
+    color: red;
+}
